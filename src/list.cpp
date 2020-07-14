@@ -1,4 +1,5 @@
 #include "include/list.h"
+#include "include/database.h"
 
 void List::print_menu()
 {
@@ -15,9 +16,6 @@ void List::print_menu()
 
     switch (choice)
     {
-        case 4:
-            exit(0);
-            break;
         case 1:
             print_list();
             break;
@@ -27,31 +25,13 @@ void List::print_menu()
         case 3:
             delete_item();
             break;
+        case 4:
+            return;
+            break;
         default:
             std::cout << "Sorry choice not implemented yet. Try another choice.\n";
             print_menu();
     }
-    // if( choice == 4 )
-    // {
-    //     exit(0);
-    // }
-    // else if(choice == 1)
-    // {
-    //     print_list();
-    // }
-    // else if(choice == 2)
-    // {
-    //     add_item();
-    // }
-    // else if(choice == 3)
-    // {
-    //     delete_item();
-    // }
-    
-    // else
-    // {
-    //     std::cout << "Sorry choice not implemented yet. Try another choice\n";
-    // }
     
 }
 
@@ -76,6 +56,7 @@ void List::add_item()
     std::cin >> item;
 
     list.push_back(item);
+    
 
     std::cout << "Successfully added an item to the list\n";
     std::cin.clear();
