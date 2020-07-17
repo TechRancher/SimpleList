@@ -1,9 +1,18 @@
+#include <iostream>
 #include "include/database.h"
 #include "include/list.h"
 
-void Database::write(std::vector<std::string> list)
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::ofstream;
+using std::ifstream;
+
+
+void Database::write(std::vector<string> list)
 {
-    std::ofstream db;
+    ofstream db;
     db.open("db/list.sl");
 
     if(db.is_open())
@@ -15,7 +24,7 @@ void Database::write(std::vector<std::string> list)
     }
     else
     {
-        std::cout << "Cannot open file for writting.\n";
+        cout << "Cannot open file for writting.\n";
     }
     
     db.close();
@@ -23,21 +32,21 @@ void Database::write(std::vector<std::string> list)
 
 void Database::read()
 {
-    std::string line;
-    std::ifstream db;
+    string line;
+    ifstream db;
     db.open("db/list.sl");
 
     if(db.is_open())
     {
         while (getline(db, line, '\n'))
         {
-            std::cout << line << "\n";
+            cout << line << "\n";
         }
         
     }
     else
     {
-        std::cout << "Cannot open file for reading\n";
+        cout << "Cannot open file for reading\n";
     }
     db.close();
 }

@@ -2,6 +2,11 @@
 #include <vector>
 #include <fstream>
 
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
 
 class Database {
     private:
@@ -13,9 +18,9 @@ class Database {
     ~Database(){
         //destructor
     }
-    std::vector<std::string> list;
-    std::string name;
+    vector<string> list;
+    string name;
 
-    void write(std::vector<std::string> list);
+    void write(vector<string> list);
     void read();
 };

@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+using std::string;
+using std::vector;
 
 class List 
 {
@@ -15,8 +17,8 @@ class List
     {
         //destructor
     }
-    std::vector<std::string> list;
-    std::string name;
+    vector<string> list;
+    string name;
 
     void print_menu();
     void print_list();
