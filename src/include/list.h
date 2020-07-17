@@ -2,14 +2,17 @@
 #include <vector>
 
 
-class List {
+class List 
+{
     private:
     protected:
     public:
-    List(){
+    List()
+    {
         //constructor
     }
-    ~List(){
+    ~List()
+    {
         //destructor
     }
     std::vector<std::string> list;
