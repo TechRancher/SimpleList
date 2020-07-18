@@ -104,11 +104,15 @@ void List::print_list()
     cout << "*** Printing List ***\n";
 
     for( int list_index = 0; list_index < (int)list.size(); list_index++)
-    {
+    {   
         cout << "* " << list[list_index] << "\n";
     }
+    menu_choose();
+}
 
-    cout << "M - Menu\n";
+void List::menu_choose()
+{
+    cout << "\nM - Menu\n";
     cout << "Type M or m to get back to menu: ";
     char choice;
     cin >> choice;
@@ -119,7 +123,28 @@ void List::print_list()
     }
     else
     {
-        cout << "Invalid Choice...Quiting\n";
+        cout << "Invalid Choice...Type M or m to get back to menu\n";
+        menu_choose();
+    }
+}
+
+void List::find_userList() 
+{
+    bool userFound = false;
+    cout << "\n\n\n";
+    cout << "*** Welcome " << name << " ***\n";
+
+    for (int user_index = 0; user_index < (int)mainList.size(); user_index++)
+    {
+        //cout << mainList[user_index][0] << "\n";
+        if (mainList[user_index][0] == name)    
+        {
+            cout << "User has been found: " << mainList [user_index][0] << "\n";
+            list = mainList[user_index];
+            userFound = true;
+            break;
+        }
+            
     }
     
 }

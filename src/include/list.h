@@ -17,6 +17,7 @@ class List
     {
         //destructor
     }
+    vector<vector<string>> mainList;
     vector<string> list;
     string name;
 
@@ -25,5 +26,6 @@ class List
     void add_item();
     void delete_item();
     void item_list();
-
+    void find_userList(); 
+    void menu_choose();
 };
